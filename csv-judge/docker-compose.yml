@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  csv-judge:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - csv_judge_data:/tmp/csv_judge_data
+    environment:
+      - DATA_DIR=/tmp/csv_judge_data
+    restart: unless-stopped
+
+volumes:
+  csv_judge_data:
